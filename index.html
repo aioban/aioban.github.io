@@ -1,297 +1,522 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth" data-theme="dark">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <title>Aioban.Dev Group — Full-Stack Web Developer</title>
-    <meta name="description" content="Full-stack web developer. React/Next.js, Node.js, Python, Go, C#, PostgreSQL/MongoDB. Responsive, secure, and production-ready web apps." />
-    <meta name="theme-color" content="#14b8a6" />
-    <meta name="color-scheme" content="light dark" />
-    <meta property="og:title" content="Aioban.Dev Group — Full-Stack Web Developer" />
-    <meta property="og:description" content="Portfolio: responsive, secure, and production-ready apps. EU-hours availability from Argentina." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://aioban.github.io/" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-/* Elevation */
-.elev-1 { box-shadow: 0 1px 2px rgba(0,0,0,.06), 0 3px 12px rgba(0,0,0,.08), 0 12px 24px -12px rgba(0,0,0,.12); }
-.elev-2 { box-shadow: 0 2px 4px rgba(0,0,0,.06), 0 8px 24px rgba(0,0,0,.10), 0 24px 48px -24px rgba(0,0,0,.16); }
-.nav-glass { background: rgba(255,255,255,.55); -webkit-backdrop-filter: saturate(140%) blur(8px); backdrop-filter: saturate(140%) blur(8px); }
-.dark .nav-glass { background: rgba(2,6,23,.45); }
-.nav-opaque { background: rgba(255,255,255,.85); }
-.dark .nav-opaque { background: rgba(2,6,23,.70); }
-.spotlight { pointer-events:none; position:absolute; inset:0; mix-blend-mode:soft-light; background: radial-gradient(600px circle at var(--mx,50%) var(--my,50%), rgba(20,184,166,.18), transparent 55%); transition: opacity .3s ease; }
-@media (prefers-reduced-motion: reduce) { .spotlight{ display:none; } }
-[data-tilt] { will-change: transform; transform: translateZ(0); }
-.fade-in{animation:fade 420ms ease both}
-@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
-.sr-only:focus,.skip:focus{position:static!important;clip:auto!important;height:auto;width:auto;background:#fff;color:#000;padding:.5rem 1rem;border-radius:.75rem}
-.project-card{opacity:0;transform:translateY(16px) scale(.98);transition:opacity .5s ease,transform .5s ease,box-shadow .2s ease}
-.project-card.visible{opacity:1;transform:none}
-@media (prefers-reduced-motion: reduce){.project-card{transition:none}}
-.puff-out{animation:puff .6s ease forwards;will-change:transform,filter,opacity}
-@keyframes puff{0%{opacity:1;filter:blur(0);transform:translateY(0) scale(1)}100%{opacity:0;filter:blur(12px);transform:translateY(10px) scale(1.1)}}
-:root { --safe-bottom: env(safe-area-inset-bottom); }
-#dock { padding-bottom: max(0px, var(--safe-bottom)); }
-a, button { -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
-.active-press { transform: scale(.98); }
-.dock-btn{ padding:.7rem 1rem; border-radius:9999px; }
-@media (pointer:coarse){ .dock-btn{ padding:.85rem 1.1rem; font-size:.95rem; } }
 
-</style>
-  </head>
-  <body id="top" class="bg-white text-slate-800 antialiased dark:bg-slate-950 dark:text-slate-100">
-    <a href="#main" class="skip sr-only focus:not-sr-only absolute left-4 top-4 z-50" data-i18n="a11y.skip">Skip to content</a>
+<html class="scroll-smooth" data-theme="dark" lang="en">
+<head><!-- [ANCHOR:HEAD_START] -->
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
+<title>Aioban.Dev Group — Full-Stack Web Developer</title>
+<meta content="Full-stack web developer. React/Next.js, Node.js, Python, Go, C#, PostgreSQL/MongoDB. Responsive, secure, and production-ready web apps." name="description"/>
+<meta content="#14b8a6" name="theme-color"/>
+<meta content="light dark" name="color-scheme"/>
+<meta content="Aioban.Dev Group — Full-Stack Web Developer" property="og:title"/>
+<meta content="Portfolio: responsive, secure, and production-ready apps. EU-hours availability from Argentina." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://aioban.github.io/" property="og:url"/>
+<script type="application/ld+json">
+    {
+      "@context":"https://schema.org",
+      "@type":"Organization",
+      "name":"Aioban.Dev Group",
+      "url":"https://aioban.github.io/",
+      "sameAs":["https://github.com/aioban"],
+      "email":"mailto:compagnucci.ja@gmail.com"
+    }
+    </script>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              brand: { 50:'#f0fdfa',100:'#ccfbf1',200:'#99f6e4',300:'#5eead4',400:'#2dd4bf',500:'#14b8a6',600:'#0d9488',700:'#0f766e',800:'#115e59',900:'#134e4a' },
+              accent: { 50:'#fff1f2', 400:'#fca5a5' }
+            },
+            boxShadow: { soft: '0 6px 24px -6px rgb(0 0 0 / 0.15)' }
+          }
+        }
+      }
+    </script>
+<style>
+      /* Elevation */
+      .elev-1 { box-shadow: 0 1px 2px rgba(0,0,0,.06), 0 3px 12px rgba(0,0,0,.08), 0 12px 24px -12px rgba(0,0,0,.12); }
+      .elev-2 { box-shadow: 0 2px 4px rgba(0,0,0,.06), 0 8px 24px rgba(0,0,0,.10), 0 24px 48px -24px rgba(0,0,0,.16); }
 
-    <header class="sticky top-0 z-40 border-b border-slate-200/70 dark:border-slate-800 nav-glass" id="navbar">
-      <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-        <a href="#" class="font-semibold tracking-tight text-lg">Aioban.Dev Group<span class="text-brand-500">.</span></a>
-        <nav class="hidden md:flex gap-6 text-sm">
-          <a href="#skills" class="hover:text-brand-500" data-i18n="nav.skills">Skills</a>
-          <a href="#services" class="hover:text-brand-500" data-i18n="nav.services">Services</a>
-          <a href="#process" class="hover:text-brand-500" data-i18n="nav.process">Process</a>
-          <a href="#contact" class="hover:text-brand-500" data-i18n="nav.contact">Contact</a>
-        </nav>
-        <div class="flex items-center gap-2">
-          <button id="rtlBtn" class="p-2 rounded-xl border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-900 text-xs" title="Toggle RTL">RTL</button>
-          <button id="langBtn" class="p-2 rounded-xl border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-900 text-xs" title="Language / Idioma">EN</button>
-          <button id="themeBtn" class="p-2 rounded-xl border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-900" title="Theme — Click toggles, Shift+Click Auto" aria-label="Toggle theme">
-            <svg id="icon-sun" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <circle cx="12" cy="12" r="4" fill="currentColor" />
-              <g opacity="0.85"><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.6 4.6l1.4 1.4M18 18l1.4 1.4M18 6l1.4-1.4M4.6 19.4 6 18" stroke-linecap="round"/></g>
-            </svg>
-            <svg id="icon-moon" class="w-5 h-5 hidden" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <defs><mask id="m-c"><rect width="24" height="24" fill="#fff"/><circle cx="14" cy="10" r="8" fill="#000"/></mask></defs>
-              <g mask="url(#m-c)"><circle cx="12" cy="12" r="8" fill="currentColor"/></g>
-            </svg>
-          </button>
-          <button id="menuBtn" class="md:hidden p-2 rounded-xl border border-slate-200 dark:border-slate-800" aria-label="Open menu">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
-          </button>
-        </div>
-      </div>
-      <div id="mobileNav" class="md:hidden hidden border-t border-slate-200 dark:border-slate-800">
-        <nav class="max-w-6xl mx-auto px-4 py-3 grid gap-3 text-sm">
-          <a href="#skills" class="hover:text-brand-500" data-i18n="nav.skills">Skills</a>
-          <a href="#services" class="hover:text-brand-500" data-i18n="nav.services">Services</a>
-          <a href="#process" class="hover:text-brand-500" data-i18n="nav.process">Process</a>
-          <a href="#contact" class="hover:text-brand-500" data-i18n="nav.contact">Contact</a>
-        </nav>
-      </div>
-    </header>
+      /* Glass navbar */
+      .nav-glass { background: rgba(255,255,255,.55); -webkit-backdrop-filter: saturate(140%) blur(8px); backdrop-filter: saturate(140%) blur(8px); }
+      .dark .nav-glass { background: rgba(2,6,23,.45); }
+      .nav-opaque { background: rgba(255,255,255,.85); }
+      .dark .nav-opaque { background: rgba(2,6,23,.70); }
 
-    <main id="main">
-      <section id="hero" class="relative">
-        <div id="heroBg" class="absolute inset-0 -z-10"></div>
-        <div class="spotlight" id="spotlight"></div>
-        <div class="max-w-6xl mx-auto px-4 py-16 md:py-24">
-          <div class="grid md:grid-cols-2 gap-10 items-center">
-            <div class="fade-in">
-              <h1 class="text-3xl md:text-5xl font-black tracking-tight leading-tight" data-i18n="hero.title">Full‑Stack Web Developer<span class="text-brand-500">.</span></h1>
-              <p class="mt-4 text-slate-600 dark:text-slate-300" data-i18n="hero.lead">I build clean, responsive and secure web applications. Front‑end & back‑end: JavaScript/Node.js, Python, Go, C#, HTML/CSS. Availability aligned to EU hours (based in Argentina).</p>
-              <ul class="mt-6 space-y-2 text-sm text-slate-700 dark:text-slate-300">
-                <li data-i18n="hero.b1">• 4 years of close mentorship living with senior remote developers.</li>
-                <li data-i18n="hero.b2">• Specialty: AI‑assisted workflows & AI chatbot integration.</li>
-                <li data-i18n="hero.b3">• Serious delivery mindset — production‑ready, documented, tested.</li>
-              </ul>
-              <div class="mt-8 flex gap-3">
-                <a href="#projects" class="inline-flex items-center gap-2 rounded-2xl bg-brand-500 px-5 py-3 text-white font-medium elev-1 hover:translate-y-[-1px] hover:elev-2 transition" data-i18n="cta.work">Explore Work</a>
-                <a href="#contact" class="inline-flex items-center gap-2 rounded-2xl border px-5 py-3 font-medium border-slate-300 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-900" data-i18n="cta.contact">Contact</a>
-              </div>
-            </div>
-            <div class="fade-in md:justify-self-end">
-              <div class="relative overflow-hidden rounded-3xl border border-slate-200 dark:border-slate-800 p-6 elev-1 bg-white/80 dark:bg-slate-900/70">
-                <div class="text-sm text-slate-500 dark:text-slate-400" data-i18n="avail.title">Availability</div>
-                <div class="mt-2 text-lg font-semibold" data-i18n="avail.subtitle">Overlap CET/CEST • Remote‑ready</div>
-                <div class="mt-4 grid grid-cols-2 gap-3 text-sm">
-                  <div class="rounded-xl border border-slate-200 dark:border-slate-800 p-3 bg-white/70 dark:bg-slate-900/60"><div class="text-slate-500" data-i18n="avail.langsL">Languages</div><div class="font-medium" data-i18n="avail.langsV">English, Spanish</div></div>
-                  <div class="rounded-xl border border-slate-200 dark:border-slate-800 p-3 bg-white/70 dark:bg-slate-900/60"><div class="text-slate-500" data-i18n="avail.tzL">Timezone</div><div class="font-medium" data-i18n="avail.tzV">AR (works EU hours)</div></div>
-                  <div class="rounded-xl border border-slate-200 dark:border-slate-800 p-3 bg-white/70 dark:bg-slate-900/60"><div class="text-slate-500" data-i18n="avail.collabL">Collab</div><div class="font-medium" data-i18n="avail.collabV">Git, GitHub, Jira</div></div>
-                  <div class="rounded-xl border border-slate-200 dark:border-slate-800 p-3 bg-white/70 dark:bg-slate-900/60"><div class="text-slate-500" data-i18n="avail.focusL">Focus</div><div class="font-medium" data-i18n="avail.focusV">Quality & detail</div></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      /* Spotlight */
+      .spotlight { pointer-events:none; position:absolute; inset:0; mix-blend-mode:soft-light; background: radial-gradient(600px circle at var(--mx,50%) var(--my,50%), rgba(20,184,166,.18), transparent 55%); transition: opacity .3s ease; }
+      @media (prefers-reduced-motion: reduce) { .spotlight { display:none; } }
 
-      <section id="skills" class="bg-slate-50 dark:bg-slate-900/40 border-y border-slate-200 dark:border-slate-800">
-        <div class="max-w-6xl mx-auto px-4 py-12">
-          <h2 class="text-xl md:text-2xl font-bold" data-i18n="skills.h">Skills</h2>
-          <p class="mt-2 text-sm text-slate-600 dark:text-slate-300" data-i18n="skills.lead">Roadmap‑driven skillset, focused on job‑ready delivery.</p>
-          <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            <div class="rounded-2xl border border-slate-200 dark:border-slate-800 p-4 elev-1 bg-white dark:bg-slate-950/60">
-              <div class="text-xs uppercase tracking-wide text-brand-600" data-i18n="skills.fe.h">Front‑end</div>
-              <ul class="mt-2 text-sm space-y-2">
-                <li data-i18n="skills.fe.l1">HTML, CSS (Tailwind), DevTools</li>
-                <li data-i18n="skills.fe.l2">JavaScript, DOM, Accessibility</li>
-                <li data-i18n="skills.fe.l3">Responsive design, SSR (Next.js)</li>
-                <li data-i18n="skills.fe.l4">React, TypeScript</li>
-              </ul>
-            </div>
-            <div class="rounded-2xl border border-slate-200 dark:border-slate-800 p-4 elev-1 bg-white dark:bg-slate-950/60">
-              <div class="text-xs uppercase tracking-wide text-brand-600" data-i18n="skills.be.h">Back‑end</div>
-              <ul class="mt-2 text-sm space-y-2">
-                <li data-i18n="skills.be.l1">Node.js + Express</li>
-                <li data-i18n="skills.be.l2">Python, Go, C#</li>
-                <li data-i18n="skills.be.l3">REST APIs, WebSockets</li>
-                <li data-i18n="skills.be.l4">Auth (JWT/OAuth)</li>
-              </ul>
-            </div>
-            <div class="rounded-2xl border border-slate-200 dark:border-slate-800 p-4 elev-1 bg-white dark:bg-slate-950/60">
-              <div class="text-xs uppercase tracking-wide text-brand-600" data-i18n="skills.di.h">Data & Infra</div>
-              <ul class="mt-2 text-sm space-y-2">
-                <li data-i18n="skills.di.l1">PostgreSQL, MongoDB</li>
-                <li data-i18n="skills.di.l2">Docker • AWS/GCP basics</li>
-                <li data-i18n="skills.di.l3">Git, GitHub, CI basics</li>
-                <li data-i18n="skills.di.l4">HTTP(S), DNS, CORS</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
+      /* Tilt hint */
+      [data-tilt] { will-change: transform; transform: translateZ(0); }
 
-      <section id="services" class="max-w-6xl mx-auto px-4 py-14 md:py-20">
-        <h2 class="text-xl md:text-2xl font-bold" data-i18n="services.h">Services & Deliverables</h2>
-        <p class="mt-2 text-sm text-slate-600 dark:text-slate-300" data-i18n="services.lead">Production‑ready work with documentation, testing and deploy.</p>
-        <div class="mt-6 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div class="rounded-2xl border border-slate-200 dark:border-slate-800 p-5 elev-1 bg-white/90 dark:bg-slate-950/60">
-            <h3 class="font-semibold" data-i18n="services.s1.h">Full‑Stack Development</h3>
-            <p class="mt-2 text-sm" data-i18n="services.s1.p">React/Next.js front‑end + Node.js APIs. Clean code, tests, and CI basics.</p>
-          </div>
-          <div class="rounded-2xl border border-slate-200 dark:border-slate-800 p-5 elev-1 bg-white/90 dark:bg-slate-950/60">
-            <h3 class="font-semibold" data-i18n="services.s2.h">Pixel‑Perfect HTML/CSS</h3>
-            <p class="mt-2 text-sm" data-i18n="services.s2.p">Exact match from Figma/PDF. Responsive, accessible, RTL‑ready.</p>
-          </div>
-          <div class="rounded-2xl border border-slate-200 dark:border-slate-800 p-5 elev-1 bg-white/90 dark:bg-slate-950/60">
-            <h3 class="font-semibold" data-i18n="services.s3.h">API Development</h3>
-            <p class="mt-2 text-sm" data-i18n="services.s3.p">REST/WebSocket, auth (JWT), rate‑limits, pagination and logs.</p>
-          </div>
-          <div class="rounded-2xl border border-slate-200 dark:border-slate-800 p-5 elev-1 bg-white/90 dark:bg-slate-950/60">
-            <h3 class="font-semibold" data-i18n="services.s4.h">WordPress from Generated Code</h3>
-            <p class="mt-2 text-sm" data-i18n="services.s4.p">From bolt.new/Lovable/static code → custom theme/blocks.</p>
-          </div>
-          <div class="rounded-2xl border border-slate-200 dark:border-slate-800 p-5 elev-1 bg-white/90 dark:bg-slate-950/60">
-            <h3 class="font-semibold" data-i18n="services.s5.h">Node.js + Strapi</h3>
-            <p class="mt-2 text-sm" data-i18n="services.s5.p">Content models, components, secure endpoints and responsive UI.</p>
-          </div>
-          <div class="rounded-2xl border border-slate-200 dark:border-slate-800 p-5 elev-1 bg-white/90 dark:bg-slate-950/60">
-            <h3 class="font-semibold" data-i18n="services.s6.h">Security & QA</h3>
-            <p class="mt-2 text-sm" data-i18n="services.s6.p">Input validation, SQLi/XSS/CSRF prevention, CORS, basic E2E checks.</p>
-          </div>
-        </div>
-      </section>
+      /* Fade-in */
+      .fade-in{animation:fade 420ms ease both}
+      @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
 
-      <section id="projects" class="bg-slate-50 dark:bg-slate-900/40 border-y border-slate-200 dark:border-slate-800">
-        <div class="max-w-6xl mx-auto px-4 py-14 md:py-20">
-          <h2 class="text-xl md:text-2xl font-bold" data-i18n="projects.h">Projects</h2>
-          <p class="mt-2 text-sm text-slate-600 dark:text-slate-300" data-i18n="projects.lead">Selection of builds aligned with real client needs.</p>
-          <div class="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <article class="project-card rounded-3xl border border-slate-200 dark:border-slate-800 overflow-hidden transition bg-white/90 dark:bg-slate-950/60 elev-1" data-tilt data-tilt-max="8" data-tilt-speed="400" data-tilt-scale="1.02">
-              <div class="p-5">
-                <div class="text-xs uppercase tracking-wide text-brand-600" data-i18n="projects.p1.stack">HTML • Tailwind • RTL</div>
-                <h3 class="mt-2 font-semibold" data-i18n="projects.p1.h">Mario — Expenses Dashboard (Static)</h3>
-                <p class="mt-2 text-sm" data-i18n="projects.p1.p">Pixel‑perfect from PDF, responsive + RTL (Hebrew). Single‑file delivery for pilot evaluation.</p>
-                <div class="mt-3 flex flex-wrap gap-2 text-xs">
-                  <span class="px-2 py-1 rounded-full bg-accent-50 text-slate-700 border" data-i18n="projects.tag.responsive">Responsive</span>
-                  <span class="px-2 py-1 rounded-full border" data-i18n="projects.tag.accessibility">Accessibility</span>
-                </div>
-              </div>
-            </article>
-            <article class="project-card rounded-3xl border border-slate-200 dark:border-slate-800 overflow-hidden transition bg-white/90 dark:bg-slate-950/60 elev-1" data-tilt data-tilt-max="8" data-tilt-speed="400" data-tilt-scale="1.02">
-              <div class="p-5">
-                <div class="text-xs uppercase tracking-wide text-brand-600" data-i18n="projects.p2.stack">React • Node.js • PostgreSQL</div>
-                <h3 class="mt-2 font-semibold" data-i18n="projects.p2.h">Client ↔ Worker Marketplace</h3>
-                <p class="mt-2 text-sm" data-i18n="projects.p2.p">Job posting, secure messaging (JWT + WebSocket), profiles & ratings, advanced filters. Ready to scale.</p>
-              </div>
-            </article>
-            <article class="project-card rounded-3xl border border-slate-200 dark:border-slate-800 overflow-hidden transition bg-white/90 dark:bg-slate-950/60 elev-1" data-tilt data-tilt-max="8" data-tilt-speed="400" data-tilt-scale="1.02">
-              <div class="p-5">
-                <div class="text-xs uppercase tracking-wide text-brand-600" data-i18n="projects.p3.stack">Node.js • Strapi</div>
-                <h3 class="mt-2 font-semibold" data-i18n="projects.p3.h">CMS Site Update & Clone</h3>
-                <p class="mt-2 text-sm" data-i18n="projects.p3.p">Cloned/adapted an existing site. Clean components, content types and responsive UI.</p>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
+      /* A11y focus skip */
+      .sr-only:focus,.skip:focus{position:static!important;clip:auto!important;height:auto;width:auto;background:#fff;color:#000;padding:.5rem 1rem;border-radius:.75rem}
 
-      <section id="process" class="max-w-6xl mx-auto px-4 py-14 md:py-20">
-        <h2 class="text-xl md:text-2xl font-bold" data-i18n="process.h">Process</h2>
-        <ol class="mt-6 grid md:grid-cols-2 lg:grid-cols-4 gap-4 text-sm">
-          <li class="rounded-2xl border border-slate-200 dark:border-slate-800 p-4 elev-1 bg-white/90 dark:bg-slate-950/60"><span class="font-semibold" data-i18n="process.s1.h">1. Brief</span><br/><span data-i18n="process.s1.p">Goals, scope, constraints. Risks & assumptions documented.</span></li>
-          <li class="rounded-2xl border border-slate-200 dark:border-slate-800 p-4 elev-1 bg-white/90 dark:bg-slate-950/60"><span class="font-semibold" data-i18n="process.s2.h">2. Build</span><br/><span data-i18n="process.s2.p">MVP first. Clean code, commits, small PRs.</span></li>
-          <li class="rounded-2xl border border-slate-200 dark:border-slate-800 p-4 elev-1 bg-white/90 dark:bg-slate-950/60"><span class="font-semibold" data-i18n="process.s3.h">3. QA</span><br/><span data-i18n="process.s3.p">Responsive, a11y, basic tests, security checks.</span></li>
-          <li class="rounded-2xl border border-slate-200 dark:border-slate-800 p-4 elev-1 bg-white/90 dark:bg-slate-950/60"><span class="font-semibold" data-i18n="process.s4.h">4. Ship</span><br/><span data-i18n="process.s4.p">Deploy + README + handoff. Iterate if needed.</span></li>
-        </ol>
-      </section>
+      /* Project cards reveal */
+      .project-card{opacity:0;transform:translateY(16px) scale(.98);transition:opacity .5s ease,transform .5s ease,box-shadow .2s ease}
+      .project-card.visible{opacity:1;transform:none}
+      @media (prefers-reduced-motion: reduce){.project-card{transition:none}}
 
-      <section id="contact" class="bg-slate-50 dark:bg-slate-900/40 border-y border-slate-200 dark:border-slate-800">
-        <div class="max-w-6xl mx-auto px-4 py-14 md:py-20">
-          <h2 class="text-xl md:text-2xl font-bold" data-i18n="contact.h">Contact</h2>
-          <p class="mt-2 text-sm text-slate-600 dark:text-slate-300" data-i18n="contact.lead">Prefer contact via Upwork for project safety and scope control.</p>
-          <div class="mt-6 grid md:grid-cols-2 gap-6">
-            <div class="rounded-2xl border border-slate-200 dark:border-slate-800 p-6 elev-1 bg-white/90 dark:bg-slate-950/60">
-              <div class="text-sm text-slate-500" data-i18n="contact.links">Links</div>
-              <div class="mt-2 flex flex-wrap gap-3 text-sm">
-                <a class="px-3 py-1 rounded-full border hover:bg-slate-50 dark:hover:bg-slate-900" href="https://github.com/aioban" target="_blank" rel="noreferrer noopener">GitHub</a>
-                <a class="px-3 py-1 rounded-full border hover:bg-slate-50 dark:hover:bg-slate-900" href="#" target="_blank" rel="noreferrer noopener">Upwork</a>
-                <a class="px-3 py-1 rounded-full border hover:bg-slate-50 dark:hover:bg-slate-900" href="https://aioban.github.io" target="_blank" rel="noreferrer noopener" data-i18n="contact.live">Live Portfolio</a>
-              </div>
-              <div class="mt-6 text-sm text-slate-500" data-i18n="contact.emailL">Email</div>
-              <a id="emailLink" href="mailto:compagnucci.ja@gmail.com" class="font-medium hover:underline">compagnucci.ja@gmail.com</a>
-            </div>
-            <form class="rounded-2xl border border-slate-200 dark:border-slate-800 p-6 elev-1 bg-white/90 dark:bg-slate-950/60" onsubmit="event.preventDefault()" aria-label="Contact form (non-functional demo)">
-              <div class="grid gap-4">
-                <div>
-                  <label for="name" class="block text-sm text-slate-500" data-i18n="contact.form.nameL">Name</label>
-                  <input id="name" class="mt-1 w-full rounded-xl border border-slate-300 dark:border-slate-700 bg-transparent px-3 py-2 focus:outline-none focus:ring-2 focus:ring-brand-500" placeholder="Your name" data-i18n-placeholder="contact.form.namePH" />
-                </div>
-                <div>
-                  <label for="email" class="block text-sm text-slate-500" data-i18n="contact.form.emailL">Email</label>
-                  <input id="email" type="email" class="mt-1 w-full rounded-xl border border-slate-300 dark:border-slate-700 bg-transparent px-3 py-2 focus:outline-none focus:ring-2 focus:ring-brand-500" placeholder="you@example.com" data-i18n-placeholder="contact.form.emailPH" />
-                </div>
-                <div>
-                  <label for="message" class="block text-sm text-slate-500" data-i18n="contact.form.msgL">Message</label>
-                  <textarea id="message" rows="4" class="mt-1 w-full rounded-xl border border-slate-300 dark:border-slate-700 bg-transparent px-3 py-2 focus:outline-none focus:ring-2 focus:ring-brand-500" placeholder="Tell me about your project..." data-i18n-placeholder="contact.form.msgPH"></textarea>
-                </div>
-                <button class="rounded-2xl bg-brand-500 px-5 py-3 text-white font-medium shadow hover:bg-brand-600" data-i18n="contact.form.send">Send (demo)</button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </section>
-    </main>
+      /* Puff cloud vanish for floating button */
+      .puff-out{animation:puff .6s ease forwards;will-change:transform,filter,opacity}
+      @keyframes puff{0%{opacity:1;filter:blur(0);transform:translateY(0) scale(1)}100%{opacity:0;filter:blur(12px);transform:translateY(10px) scale(1.1)}}
 
-    <footer class="border-t border-slate-200 dark:border-slate-800">
-      <div class="max-w-6xl mx-auto px-4 py-8 text-sm text-slate-500 flex items-center justify-between">
-        <span>© <span id="year"></span> Aioban.Dev Group. <span data-i18n="footer.rights">All rights reserved.</span></span>
-        <a href="#top" class="hover:text-brand-500" data-i18n="footer.back">Back to top ↑</a>
-      </div>
-    </footer>
+      /* Mobile-first polish */
+      :root { --safe-bottom: env(safe-area-inset-bottom); }
+      #dock { padding-bottom: max(0px, var(--safe-bottom)); }
+      a, button { -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
+      .active-press { transform: scale(.98); }
+      .dock-btn{ padding:.7rem 1rem; border-radius:9999px; }
+      @media (pointer:coarse){ .dock-btn{ padding:.85rem 1.1rem; font-size:.95rem; } }
+    </style>
+<!-- Icons, Open Graph & Twitter -->
+<link href="https://aioban.github.io/" rel="canonical"/>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/favicon-32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="/favicon-512.png" rel="icon" sizes="512x512" type="image/png"/>
+<link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<meta content="https://aioban.github.io/og-image.png" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<!-- [ANCHOR:HEAD_END] --><link crossorigin="True" href="https://cdnjs.cloudflare.com" rel="preconnect"/><link crossorigin="True" href="https://cdn.jsdelivr.net" rel="preconnect"/><style>@media (prefers-reduced-motion: reduce){ html.scroll-smooth { scroll-behavior: auto; } }</style></head>
+<body class="bg-white text-slate-800 antialiased dark:bg-slate-950 dark:text-slate-100" id="top"><!-- [ANCHOR:BODY_START] -->
+<a class="skip sr-only focus:not-sr-only absolute left-4 top-4 z-50" data-i18n="a11y.skip" href="#main">Skip to content</a>
+<header class="sticky top-0 z-40 border-b border-slate-200/70 dark:border-slate-800 nav-glass" id="navbar">
+<div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+<a class="font-semibold tracking-tight text-lg" href="#">Aioban.Dev Group<span class="text-brand-500">.</span></a>
+<nav class="hidden md:flex gap-6 text-sm">
+<a class="hover:text-brand-500" data-i18n="nav.skills" href="#skills">Skills</a>
+<a class="hover:text-brand-500" data-i18n="nav.services" href="#services">Services</a>
+<a class="hover:text-brand-500" data-i18n="nav.process" href="#process">Process</a>
+<a class="hover:text-brand-500" data-i18n="nav.contact" href="#contact">Contact</a>
+</nav>
+<div class="flex items-center gap-2">
+<button class="p-2 rounded-xl border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-900 text-xs" id="rtlBtn" title="Toggle RTL">RTL</button>
+<button class="p-2 rounded-xl border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-900 text-xs" id="langBtn" title="Language / Idioma">EN</button>
+<button aria-label="Toggle theme" class="p-2 rounded-xl border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-900" id="themeBtn" title="Theme — Click toggles, Shift+Click Auto">
+<!-- Sun (day) -->
+<svg class="w-5 h-5" fill="none" id="icon-sun" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24">
+<circle cx="12" cy="12" fill="currentColor" r="4"></circle>
+<g opacity="0.85"><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.6 4.6l1.4 1.4M18 18l1.4 1.4M18 6l1.4-1.4M4.6 19.4 6 18" stroke-linecap="round"></path></g>
+</svg>
+<!-- Moon (night) -->
+<svg class="w-5 h-5 hidden" id="icon-moon" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<defs><mask id="m-c"><rect fill="#fff" height="24" width="24"></rect><circle cx="14" cy="10" fill="#000" r="8"></circle></mask></defs>
+<g mask="url(#m-c)"><circle cx="12" cy="12" fill="currentColor" r="8"></circle></g>
+</svg>
+</button>
+<button aria-controls="mobileNav" aria-expanded="false" aria-label="Open menu" class="md:hidden p-2 rounded-xl border border-slate-200 dark:border-slate-800" id="menuBtn">
+<svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</button>
+</div>
+</div>
+<div class="md:hidden hidden border-t border-slate-200 dark:border-slate-800" id="mobileNav">
+<nav class="max-w-6xl mx-auto px-4 py-3 grid gap-3 text-sm">
+<a class="hover:text-brand-500" data-i18n="nav.skills" href="#skills">Skills</a>
+<a class="hover:text-brand-500" data-i18n="nav.services" href="#services">Services</a>
+<a class="hover:text-brand-500" data-i18n="nav.process" href="#process">Process</a>
+<a class="hover:text-brand-500" data-i18n="nav.contact" href="#contact">Contact</a>
+</nav>
+</div>
+</header><div id="aioban-root"><!-- [ANCHOR:WIDGET] --></div>
+<main id="main">
+<section class="relative" id="hero">
+<div class="absolute inset-0 -z-10" id="heroBg"></div>
+<div class="spotlight" id="spotlight"></div>
+<div class="max-w-6xl mx-auto px-4 py-16 md:py-24">
+<div class="grid md:grid-cols-2 gap-10 items-center">
+<div class="fade-in">
+<h1 class="text-3xl md:text-5xl font-black tracking-tight leading-tight" data-i18n="hero.title">Full‑Stack Web Developer<span class="text-brand-500">.</span></h1>
+<p class="mt-4 text-slate-600 dark:text-slate-300" data-i18n="hero.lead">I build clean, responsive and secure web applications. Front‑end &amp; back‑end: JavaScript/Node.js, Python, Go, C#, HTML/CSS. Availability aligned to EU hours (based in Argentina).</p>
+<ul class="mt-6 space-y-2 text-sm text-slate-700 dark:text-slate-300">
+<li data-i18n="hero.b1">• 4 years of close mentorship living with senior remote developers.</li>
+<li data-i18n="hero.b2">• Specialty: AI‑assisted workflows &amp; AI chatbot integration.</li>
+<li data-i18n="hero.b3">• Serious delivery mindset — production‑ready, documented, tested.</li>
+</ul>
+<div class="mt-8 flex gap-3">
+<a class="inline-flex items-center gap-2 rounded-2xl bg-brand-500 px-5 py-3 text-white font-medium elev-1 hover:translate-y-[-1px] hover:elev-2 transition" data-i18n="cta.work" href="#projects">Explore Work</a>
+<a class="inline-flex items-center gap-2 rounded-2xl border px-5 py-3 font-medium border-slate-300 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-900" data-i18n="cta.contact" href="#contact">Contact</a>
+</div>
+</div>
+<div class="fade-in md:justify-self-end">
+<div class="relative overflow-hidden rounded-3xl border border-slate-200 dark:border-slate-800 p-6 elev-1 bg-white/80 dark:bg-slate-900/70">
+<div class="text-sm text-slate-500 dark:text-slate-400" data-i18n="avail.title">Availability</div>
+<div class="mt-2 text-lg font-semibold" data-i18n="avail.subtitle">Overlap CET/CEST • Remote‑ready</div>
+<div class="mt-4 grid grid-cols-2 gap-3 text-sm">
+<div class="rounded-xl border border-slate-200 dark:border-slate-800 p-3 bg-white/70 dark:bg-slate-900/60"><div class="text-slate-500" data-i18n="avail.langsL">Languages</div><div class="font-medium" data-i18n="avail.langsV">English, Spanish</div></div>
+<div class="rounded-xl border border-slate-200 dark:border-slate-800 p-3 bg-white/70 dark:bg-slate-900/60"><div class="text-slate-500" data-i18n="avail.tzL">Timezone</div><div class="font-medium" data-i18n="avail.tzV">AR (works EU hours)</div></div>
+<div class="rounded-xl border border-slate-200 dark:border-slate-800 p-3 bg-white/70 dark:bg-slate-900/60"><div class="text-slate-500" data-i18n="avail.collabL">Collab</div><div class="font-medium" data-i18n="avail.collabV">Git, GitHub, Jira</div></div>
+<div class="rounded-xl border border-slate-200 dark:border-slate-800 p-3 bg-white/70 dark:bg-slate-900/60"><div class="text-slate-500" data-i18n="avail.focusL">Focus</div><div class="font-medium" data-i18n="avail.focusV">Quality &amp; detail</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="bg-slate-50 dark:bg-slate-900/40 border-y border-slate-200 dark:border-slate-800" id="skills">
+<div class="max-w-6xl mx-auto px-4 py-12">
+<h2 class="text-xl md:text-2xl font-bold" data-i18n="skills.h">Skills</h2>
+<p class="mt-2 text-sm text-slate-600 dark:text-slate-300" data-i18n="skills.lead">Roadmap‑driven skillset, focused on job‑ready delivery.</p>
+<div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+<div class="rounded-2xl border border-slate-200 dark:border-slate-800 p-4 elev-1 bg-white dark:bg-slate-950/60">
+<div class="text-xs uppercase tracking-wide text-brand-600" data-i18n="skills.fe.h">Front‑end</div>
+<ul class="mt-2 text-sm space-y-2">
+<li data-i18n="skills.fe.l1">HTML, CSS (Tailwind), DevTools</li>
+<li data-i18n="skills.fe.l2">JavaScript, DOM, Accessibility</li>
+<li data-i18n="skills.fe.l3">Responsive design, SSR (Next.js)</li>
+<li data-i18n="skills.fe.l4">React, TypeScript</li>
+</ul>
+</div>
+<div class="rounded-2xl border border-slate-200 dark:border-slate-800 p-4 elev-1 bg-white dark:bg-slate-950/60">
+<div class="text-xs uppercase tracking-wide text-brand-600" data-i18n="skills.be.h">Back‑end</div>
+<ul class="mt-2 text-sm space-y-2">
+<li data-i18n="skills.be.l1">Node.js + Express</li>
+<li data-i18n="skills.be.l2">Python, Go, C#</li>
+<li data-i18n="skills.be.l3">REST APIs, WebSockets</li>
+<li data-i18n="skills.be.l4">Auth (JWT/OAuth)</li>
+</ul>
+</div>
+<div class="rounded-2xl border border-slate-200 dark:border-slate-800 p-4 elev-1 bg-white dark:bg-slate-950/60">
+<div class="text-xs uppercase tracking-wide text-brand-600" data-i18n="skills.di.h">Data &amp; Infra</div>
+<ul class="mt-2 text-sm space-y-2">
+<li data-i18n="skills.di.l1">PostgreSQL, MongoDB</li>
+<li data-i18n="skills.di.l2">Docker • AWS/GCP basics</li>
+<li data-i18n="skills.di.l3">Git, GitHub, CI basics</li>
+<li data-i18n="skills.di.l4">HTTP(S), DNS, CORS</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section class="max-w-6xl mx-auto px-4 py-14 md:py-20" id="services">
+<h2 class="text-xl md:text-2xl font-bold" data-i18n="services.h">Services &amp; Deliverables</h2>
+<p class="mt-2 text-sm text-slate-600 dark:text-slate-300" data-i18n="services.lead">Production‑ready work with documentation, testing and deploy.</p>
+<div class="mt-6 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+<div class="rounded-2xl border border-slate-200 dark:border-slate-800 p-5 elev-1 bg-white/90 dark:bg-slate-950/60">
+<h3 class="font-semibold" data-i18n="services.s1.h">Full‑Stack Development</h3>
+<p class="mt-2 text-sm" data-i18n="services.s1.p">React/Next.js front‑end + Node.js APIs. Clean code, tests, and CI basics.</p>
+</div>
+<div class="rounded-2xl border border-slate-200 dark:border-slate-800 p-5 elev-1 bg-white/90 dark:bg-slate-950/60">
+<h3 class="font-semibold" data-i18n="services.s2.h">Pixel‑Perfect HTML/CSS</h3>
+<p class="mt-2 text-sm" data-i18n="services.s2.p">Exact match from Figma/PDF. Responsive, accessible, RTL‑ready.</p>
+</div>
+<div class="rounded-2xl border border-slate-200 dark:border-slate-800 p-5 elev-1 bg-white/90 dark:bg-slate-950/60">
+<h3 class="font-semibold" data-i18n="services.s3.h">API Development</h3>
+<p class="mt-2 text-sm" data-i18n="services.s3.p">REST/WebSocket, auth (JWT), rate‑limits, pagination and logs.</p>
+</div>
+<div class="rounded-2xl border border-slate-200 dark:border-slate-800 p-5 elev-1 bg-white/90 dark:bg-slate-950/60">
+<h3 class="font-semibold" data-i18n="services.s4.h">WordPress from Generated Code</h3>
+<p class="mt-2 text-sm" data-i18n="services.s4.p">From bolt.new/Lovable/static code → custom theme/blocks.</p>
+</div>
+<div class="rounded-2xl border border-slate-200 dark:border-slate-800 p-5 elev-1 bg-white/90 dark:bg-slate-950/60">
+<h3 class="font-semibold" data-i18n="services.s5.h">Node.js + Strapi</h3>
+<p class="mt-2 text-sm" data-i18n="services.s5.p">Content models, components, secure endpoints and responsive UI.</p>
+</div>
+<div class="rounded-2xl border border-slate-200 dark:border-slate-800 p-5 elev-1 bg-white/90 dark:bg-slate-950/60">
+<h3 class="font-semibold" data-i18n="services.s6.h">Security &amp; QA</h3>
+<p class="mt-2 text-sm" data-i18n="services.s6.p">Input validation, SQLi/XSS/CSRF prevention, CORS, basic E2E checks.</p>
+</div>
+</div>
+</section>
+<section class="bg-slate-50 dark:bg-slate-900/40 border-y border-slate-200 dark:border-slate-800" id="projects">
+<div class="max-w-6xl mx-auto px-4 py-14 md:py-20">
+<h2 class="text-xl md:text-2xl font-bold" data-i18n="projects.h">Projects</h2>
+<p class="mt-2 text-sm text-slate-600 dark:text-slate-300" data-i18n="projects.lead">Selection of builds aligned with real client needs.</p>
+<div class="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+<article class="project-card rounded-3xl border border-slate-200 dark:border-slate-800 overflow-hidden transition bg-white/90 dark:bg-slate-950/60 elev-1" data-tilt="" data-tilt-max="8" data-tilt-scale="1.02" data-tilt-speed="400">
+<div class="p-5">
+<div class="text-xs uppercase tracking-wide text-brand-600" data-i18n="projects.p1.stack">HTML • Tailwind • RTL</div>
+<h3 class="mt-2 font-semibold" data-i18n="projects.p1.h">Mario — Expenses Dashboard (Static)</h3>
+<p class="mt-2 text-sm" data-i18n="projects.p1.p">Pixel‑perfect from PDF, responsive + RTL (Hebrew). Single‑file delivery for pilot evaluation.</p>
+<div class="mt-3 flex flex-wrap gap-2 text-xs">
+<span class="px-2 py-1 rounded-full bg-accent-50 text-slate-700 border" data-i18n="projects.tag.responsive">Responsive</span>
+<span class="px-2 py-1 rounded-full border" data-i18n="projects.tag.accessibility">Accessibility</span>
+</div>
+</div>
+</article>
+<article class="project-card rounded-3xl border border-slate-200 dark:border-slate-800 overflow-hidden transition bg-white/90 dark:bg-slate-950/60 elev-1" data-tilt="" data-tilt-max="8" data-tilt-scale="1.02" data-tilt-speed="400">
+<div class="p-5">
+<div class="text-xs uppercase tracking-wide text-brand-600" data-i18n="projects.p2.stack">React • Node.js • PostgreSQL</div>
+<h3 class="mt-2 font-semibold" data-i18n="projects.p2.h">Client ↔ Worker Marketplace</h3>
+<p class="mt-2 text-sm" data-i18n="projects.p2.p">Job posting, secure messaging (JWT + WebSocket), profiles &amp; ratings, advanced filters. Ready to scale.</p>
+</div>
+</article>
+<article class="project-card rounded-3xl border border-slate-200 dark:border-slate-800 overflow-hidden transition bg-white/90 dark:bg-slate-950/60 elev-1" data-tilt="" data-tilt-max="8" data-tilt-scale="1.02" data-tilt-speed="400">
+<div class="p-5">
+<div class="text-xs uppercase tracking-wide text-brand-600" data-i18n="projects.p3.stack">Node.js • Strapi</div>
+<h3 class="mt-2 font-semibold" data-i18n="projects.p3.h">CMS Site Update &amp; Clone</h3>
+<p class="mt-2 text-sm" data-i18n="projects.p3.p">Cloned/adapted an existing site. Clean components, content types and responsive UI.</p>
+</div>
+</article>
+</div>
+</div>
+</section>
+<section class="max-w-6xl mx-auto px-4 py-14 md:py-20" id="process">
+<h2 class="text-xl md:text-2xl font-bold" data-i18n="process.h">Process</h2>
+<ol class="mt-6 grid md:grid-cols-2 lg:grid-cols-4 gap-4 text-sm">
+<li class="rounded-2xl border border-slate-200 dark:border-slate-800 p-4 elev-1 bg-white/90 dark:bg-slate-950/60"><span class="font-semibold" data-i18n="process.s1.h">1. Brief</span><br/><span data-i18n="process.s1.p">Goals, scope, constraints. Risks &amp; assumptions documented.</span></li>
+<li class="rounded-2xl border border-slate-200 dark:border-slate-800 p-4 elev-1 bg-white/90 dark:bg-slate-950/60"><span class="font-semibold" data-i18n="process.s2.h">2. Build</span><br/><span data-i18n="process.s2.p">MVP first. Clean code, commits, small PRs.</span></li>
+<li class="rounded-2xl border border-slate-200 dark:border-slate-800 p-4 elev-1 bg-white/90 dark:bg-slate-950/60"><span class="font-semibold" data-i18n="process.s3.h">3. QA</span><br/><span data-i18n="process.s3.p">Responsive, a11y, basic tests, security checks.</span></li>
+<li class="rounded-2xl border border-slate-200 dark:border-slate-800 p-4 elev-1 bg-white/90 dark:bg-slate-950/60"><span class="font-semibold" data-i18n="process.s4.h">4. Ship</span><br/><span data-i18n="process.s4.p">Deploy + README + handoff. Iterate if needed.</span></li>
+</ol>
+</section>
+<section class="bg-slate-50 dark:bg-slate-900/40 border-y border-slate-200 dark:border-slate-800" id="contact">
+<div class="max-w-6xl mx:auto px-4 py-14 md:py-20">
+<h2 class="text-xl md:text-2xl font-bold" data-i18n="contact.h">Contact</h2>
+<p class="mt-2 text-sm text-slate-600 dark:text-slate-300" data-i18n="contact.lead">Prefer contact via Upwork for project safety and scope control.</p>
+<div class="mt-6 grid md:grid-cols-2 gap-6">
+<div class="rounded-2xl border border-slate-200 dark:border-slate-800 p-6 elev-1 bg-white/90 dark:bg-slate-950/60">
+<div class="text-sm text-slate-500" data-i18n="contact.links">Links</div>
+<div class="mt-2 flex flex-wrap gap-3 text-sm">
+<a class="px-3 py-1 rounded-full border hover:bg-slate-50 dark:hover:bg-slate-900" href="https://github.com/aioban" rel="noreferrer noopener" target="_blank">GitHub</a>
+<a class="px-3 py-1 rounded-full border hover:bg-slate-50 dark:hover:bg-slate-900" href="#" rel="noreferrer noopener" target="_blank">Upwork</a>
+<a class="px-3 py-1 rounded-full border hover:bg-slate-50 dark:hover:bg-slate-900" data-i18n="contact.live" href="https://aioban.github.io" rel="noreferrer noopener" target="_blank">Live Portfolio</a>
+</div>
+<div class="mt-6 text-sm text-slate-500" data-i18n="contact.emailL">Email</div>
+<a class="font-medium hover:underline" href="mailto:compagnucci.ja@gmail.com" id="emailLink">compagnucci.ja@gmail.com</a>
+</div>
+<form aria-label="Contact form (non-functional demo)" class="rounded-2xl border border-slate-200 dark:border-slate-800 p-6 elev-1 bg-white/90 dark:bg-slate-950/60" onsubmit="event.preventDefault()">
+<div class="grid gap-4">
+<div>
+<label class="block text-sm text-slate-500" data-i18n="contact.form.nameL" for="name">Name</label>
+<input class="mt-1 w-full rounded-xl border border-slate-300 dark:border-slate-700 bg-transparent px-3 py-2 focus:outline-none focus:ring-2 focus:ring-brand-500" data-i18n-placeholder="contact.form.namePH" id="name" placeholder="Your name"/>
+</div>
+<div>
+<label class="block text-sm text-slate-500" data-i18n="contact.form.emailL" for="email">Email</label>
+<input class="mt-1 w-full rounded-xl border border-slate-300 dark:border-slate-700 bg-transparent px-3 py-2 focus:outline-none focus:ring-2 focus:ring-brand-500" data-i18n-placeholder="contact.form.emailPH" id="email" placeholder="you@example.com" type="email"/>
+</div>
+<div>
+<label class="block text-sm text-slate-500" data-i18n="contact.form.msgL" for="message">Message</label>
+<textarea class="mt-1 w-full rounded-xl border border-slate-300 dark:border-slate-700 bg-transparent px-3 py-2 focus:outline-none focus:ring-2 focus:ring-brand-500" data-i18n-placeholder="contact.form.msgPH" id="message" placeholder="Tell me about your project..." rows="4"></textarea>
+</div>
+<button class="rounded-2xl bg-brand-500 px-5 py-3 text-white font-medium shadow hover:bg-brand-600" data-i18n="contact.form.send">Send (demo)</button>
+</div>
+</form>
+</div>
+</div>
+</section>
+</main>
+<footer class="border-t border-slate-200 dark:border-slate-800">
+<div class="max-w-6xl mx-auto px-4 py-8 text-sm text-slate-500 flex items-center justify-between">
+<span>© <span id="year"></span> Aioban.Dev Group. <span data-i18n="footer.rights">All rights reserved.</span></span>
+<a class="hover:text-brand-500" data-i18n="footer.back" href="#top">Back to top ↑</a>
+</div>
+</footer>
+<!-- Floating Dock: Projects button -->
+<div class="fixed bottom-5 left-1/2 -translate-x-1/2 z-50" id="dock">
+<nav aria-label="Quick menu" class="flex items-center gap-2 rounded-full border border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/60 backdrop-blur px-3 py-2 shadow-lg elev-2" id="dockNav">
+<button class="dock-btn inline-flex items-center gap-2 bg-brand-500/90 hover:bg-brand-600 text-white px-4 py-2 rounded-full" id="dockProjects">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19.5 8.25l-7.5 7.5-7.5-7.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+<span data-i18n="dock.projects">Projects</span>
+</button>
+</nav>
+</div>
+<!-- External add-ons (deferred) -->
+<script defer="" src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+<script defer="" src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+<script defer="" src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.8.1/dist/vanilla-tilt.min.js"></script>
+<!-- App Script -->
+<script>
+    (function(){
+      const root = document.documentElement;
+      const yearSpan = document.getElementById('year');
+      const themeBtn = document.getElementById('themeBtn');
+      const rtlBtn = document.getElementById('rtlBtn');
+      const langBtn = document.getElementById('langBtn');
+      const menuBtn = document.getElementById('menuBtn');
+      const mobileNav = document.getElementById('mobileNav');
+      const navbar = document.getElementById('navbar');
+      const spotlight = document.getElementById('spotlight');
+      const heroBgEl = document.getElementById('heroBg');
+      const iconSun = document.getElementById('icon-sun');
+      const iconMoon = document.getElementById('icon-moon');
+      const metaTheme = document.querySelector('meta[name="theme-color"]');
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.8.1/dist/vanilla-tilt.min.js" defer></script>
+      # YEAR
+      if (yearSpan) yearSpan.textContent = new Date().getFullYear();
 
-    <script type="module">
-export const DICT = { en: { 'a11y.skip':'Skip to content','nav.skills':'Skills','nav.services':'Services','nav.projects':'Projects','nav.process':'Process','nav.contact':'Contact','hero.title':'Full‑Stack Web Developer<span class="text-brand-500">.</span>','hero.lead':'I build clean, responsive and secure web applications. Front‑end & back‑end: JavaScript/Node.js, Python, Go, C#, HTML/CSS. Availability aligned to EU hours (based in Argentina).','hero.b1':'• 4 years of close mentorship living with senior remote developers.','hero.b2':'• Specialty: AI‑assisted workflows & AI chatbot integration.','hero.b3':'• Serious delivery mindset — production‑ready, documented, tested.','cta.work':'Explore Work','cta.contact':'Contact','dock.projects':'Projects','avail.title':'Availability','avail.subtitle':'Overlap CET/CEST • Remote‑ready','avail.langsL':'Languages','avail.langsV':'English, Spanish','avail.tzL':'Timezone','avail.tzV':'AR (works EU hours)','avail.collabL':'Collab','avail.collabV':'Git, GitHub, Jira','avail.focusL':'Focus','avail.focusV':'Quality & detail','skills.h':'Skills','skills.lead':'Roadmap‑driven skillset, focused on job‑ready delivery.','skills.fe.h':'Front‑end','skills.fe.l1':'HTML, CSS (Tailwind), DevTools','skills.fe.l2':'JavaScript, DOM, Accessibility','skills.fe.l3':'Responsive design, SSR (Next.js)','skills.fe.l4':'React, TypeScript','skills.be.h':'Back‑end','skills.be.l1':'Node.js + Express','skills.be.l2':'Python, Go, C#','skills.be.l3':'REST APIs, WebSockets','skills.be.l4':'Auth (JWT/OAuth)','skills.di.h':'Data & Infra','skills.di.l1':'PostgreSQL, MongoDB','skills.di.l2':'Docker • AWS/GCP basics','skills.di.l3':'Git, GitHub, CI basics','skills.di.l4':'HTTP(S), DNS, CORS','services.h':'Services & Deliverables','services.lead':'Production‑ready work with documentation, testing and deploy.','projects.h':'Projects','projects.lead':'Selection of builds aligned with real client needs.','projects.p1.stack':'HTML • Tailwind • RTL','projects.p1.h':'Mario — Expenses Dashboard (Static)','projects.p1.p':'Pixel‑perfect from PDF, responsive + RTL (Hebrew). Single‑file delivery for pilot evaluation.','projects.tag.responsive':'Responsive','projects.tag.accessibility':'Accessibility','projects.p2.stack':'React • Node.js • PostgreSQL','projects.p2.h':'Client ↔ Worker Marketplace','projects.p2.p':'Job posting, secure messaging (JWT + WebSocket), profiles & ratings, advanced filters. Ready to scale.','projects.p3.stack':'Node.js • Strapi','projects.p3.h':'CMS Site Update & Clone','projects.p3.p':'Cloned/adapted an existing site. Clean components, content types and responsive UI.','process.h':'Process','process.s1.h':'1. Brief','process.s1.p':'Goals, scope, constraints. Risks & assumptions documented.','process.s2.h':'2. Build','process.s2.p':'MVP first. Clean code, commits, small PRs.','process.s3.h':'3. QA','process.s3.p':'Responsive, a11y, basic tests, security checks.','process.s4.h':'4. Ship','process.s4.p':'Deploy + README + handoff. Iterate if needed.','contact.h':'Contact','contact.lead':'Prefer contact via Upwork for project safety and scope control.','contact.links':'Links','contact.live':'Live Portfolio','contact.emailL':'Email','contact.form.nameL':'Name','contact.form.namePH':'Your name','contact.form.emailL':'Email','contact.form.emailPH':'you@example.com','contact.form.msgL':'Message','contact.form.msgPH':'Tell me about your project...','contact.form.send':'Send (demo)','footer.rights':'All rights reserved.','footer.back':'Back to top ↑' }, es: { 'a11y.skip':'Saltar al contenido','nav.skills':'Habilidades','nav.services':'Servicios','nav.projects':'Proyectos','nav.process':'Proceso','nav.contact':'Contacto','hero.title':'Desarrollador Web Full‑Stack<span class="text-brand-500">.</span>','hero.lead':'Desarrollo aplicaciones web limpias, responsivas y seguras. Front‑end & back‑end: JavaScript/Node.js, Python, Go, C#, HTML/CSS. Disponibilidad alineada al horario de la UE (radicado en Argentina).','hero.b1':'• 4 años de mentoría cercana conviviendo con desarrolladores senior remotos.','hero.b2':'• Especialidad: flujos asistidos por IA e integración de chatbots.','hero.b3':'• Enfoque serio en entregables: listo para producción, documentado y testeado.','cta.work':'Ver trabajos','cta.contact':'Contacto','dock.projects':'Proyectos','avail.title':'Disponibilidad','avail.subtitle':'Traslape CET/CEST • Listo para remoto','avail.langsL':'Idiomas','avail.langsV':'Inglés, Español','avail.tzL':'Zona horaria','avail.tzV':'AR (trabaja horario UE)','avail.collabL':'Colaboración','avail.collabV':'Git, GitHub, Jira','avail.focusL':'Foco','avail.focusV':'Calidad y detalle','skills.h':'Habilidades','skills.lead':'Conjunto de habilidades guiado por roadmap, orientado a entregables.','skills.fe.h':'Front‑end','skills.fe.l1':'HTML, CSS (Tailwind), DevTools','skills.fe.l2':'JavaScript, DOM, Accesibilidad','skills.fe.l3':'Diseño responsivo, SSR (Next.js)','skills.fe.l4':'React, TypeScript','skills.be.h':'Back‑end','skills.be.l1':'Node.js + Express','skills.be.l2':'Python, Go, C#','skills.be.l3':'REST APIs, WebSockets','skills.be.l4':'Auth (JWT/OAuth)','skills.di.h':'Datos e Infra','skills.di.l1':'PostgreSQL, MongoDB','skills.di.l2':'Docker • AWS/GCP (básico)','skills.di.l3':'Git, GitHub, CI (básico)','skills.di.l4':'HTTP(S), DNS, CORS','services.h':'Servicios y Entregables','services.lead':'Trabajo listo para producción con documentación, testing y deploy.','projects.h':'Proyectos','projects.lead':'Selección alineada a necesidades reales de clientes.','projects.p1.stack':'HTML • Tailwind • RTL','projects.p1.h':'Mario — Panel de Gastos (Estático)','projects.p1.p':'Pixel‑perfect desde PDF, responsive + RTL (hebreo). Entrega single‑file para piloto.','projects.tag.responsive':'Responsivo','projects.tag.accessibility':'Accesibilidad','projects.p2.stack':'React • Node.js • PostgreSQL','projects.p2.h':'Marketplace de Clientes ↔ Trabajadores','projects.p2.p':'Publicación de trabajos, mensajería segura (JWT + WebSocket), perfiles y ratings, filtros avanzados. Listo para escalar.','projects.p3.stack':'Node.js • Strapi','projects.p3.h':'Actualización & Clonado de Sitio CMS','projects.p3.p':'Clonado/adaptación de sitio existente. Componentes limpios, tipos de contenido y UI responsiva.','process.h':'Proceso','process.s1.h':'1. Brief','process.s1.p':'Objetivos, alcance, restricciones. Riesgos y supuestos documentados.','process.s2.h':'2. Build','process.s2.p':'MVP primero. Código limpio, commits y PRs pequeñas.','process.s3.h':'3. QA','process.s3.p':'Responsive, a11y, tests básicos y chequeos de seguridad.','process.s4.h':'4. Ship','process.s4.p':'Deploy + README + handoff. Iteraciones si hace falta.','contact.h':'Contacto','contact.lead':'Prefiero contacto por Upwork para seguridad y control de alcance.','contact.links':'Enlaces','contact.live':'Portfolio en vivo','contact.emailL':'Email','contact.form.nameL':'Nombre','contact.form.namePH':'Tu nombre','contact.form.emailL':'Email','contact.form.emailPH':'tu@ejemplo.com','contact.form.msgL':'Mensaje','contact.form.msgPH':'Contame sobre tu proyecto...','contact.form.send':'Enviar (demo)','footer.rights':'Todos los derechos reservados.','footer.back':'Volver arriba ↑' } };
-export function applyI18n(lang){ document.documentElement.lang = lang; const dict = DICT[lang] || DICT.en; document.querySelectorAll('[data-i18n]').forEach(el=>{ const key = el.getAttribute('data-i18n'); const str = dict[key] || el.textContent; if (str && /<[^>]+>/.test(str)) el.innerHTML = str; else el.textContent = str; }); document.querySelectorAll('[data-i18n-placeholder]').forEach(el=>{ const key = el.getAttribute('data-i18n-placeholder'); if (dict[key]) el.setAttribute('placeholder', dict[key]); }); localStorage.setItem('lang', lang); const langBtn = document.getElementById('langBtn'); if (langBtn) langBtn.textContent = lang.toUpperCase(); }
-export function initI18n(){ let lang = localStorage.getItem('lang') || 'en'; applyI18n(lang); const langBtn = document.getElementById('langBtn'); langBtn?.addEventListener('click', ()=>{ lang = (lang === 'en') ? 'es' : 'en'; applyI18n(lang); }); }
+      # === THEME: Auto (05:30–18:00 light, otherwise dark) with manual override ===
+      function timeBasedTheme(){
+        const now = new Date();
+        const minutes = now.getHours()*60 + now.getMinutes();
+        return (minutes >= 330 && minutes < 1080) ? 'light' : 'dark';
+      }
+      function setTheme(theme){
+        const isDark = theme === 'dark';
+        root.classList.toggle('dark', isDark);
+        if (iconSun && iconMoon){ iconSun.classList.toggle('hidden', isDark); iconMoon.classList.toggle('hidden', !isDark); }
+        if (metaTheme) metaTheme.setAttribute('content', isDark ? '#0b1220' : '#14b8a6');
+        refreshVanta();
+      }
+      function loadThemePref(){ try { return JSON.parse(localStorage.getItem('themePref')||'{}'); } catch(e){ return {}; } }
+      function saveThemePref(pref){ try { localStorage.setItem('themePref', JSON.stringify(pref)); } catch(e){} }
 
+      let themePref = loadThemePref();
+      if (!themePref.mode){ themePref = { mode:'auto', theme: timeBasedTheme() }; saveThemePref(themePref); }
+      setTheme(themePref.theme);
 
+      themeBtn?.addEventListener('click', (e)=>{
+        if (e.shiftKey){ themePref.mode='auto'; themePref.theme=timeBasedTheme(); setTheme(themePref.theme); saveThemePref(themePref); return; }
+        themePref.mode='manual'; themePref.theme = (themePref.theme==='dark')?'light':'dark'; setTheme(themePref.theme); saveThemePref(themePref);
+      });
+      setInterval(()=>{ if (themePref.mode==='auto'){ const t = timeBasedTheme(); if (t!==themePref.theme){ themePref.theme=t; setTheme(t); saveThemePref(themePref); } } }, 15*60*1000);
 
-const root=document.documentElement,yearSpan=document.getElementById('year'),themeBtn=document.getElementById('themeBtn'),rtlBtn=document.getElementById('rtlBtn'),menuBtn=document.getElementById('menuBtn'),mobileNav=document.getElementById('mobileNav'),navbar=document.getElementById('navbar'),spotlight=document.getElementById('spotlight'),heroBgEl=document.getElementById('heroBg'),iconSun=document.getElementById('icon-sun'),iconMoon=document.getElementById('icon-moon'),metaTheme=document.querySelector('meta[name="theme-color"]');yearSpan&&(yearSpan.textContent=(new Date).getFullYear());function timeBasedTheme(){const e=new Date,t=60*e.getHours()+e.getMinutes();return t>=330&&t<1080?'light':'dark'}function setTheme(e){const t='dark'===e;root.classList.toggle('dark',t),iconSun&&iconMoon&&(iconSun.classList.toggle('hidden',t),iconMoon.classList.toggle('hidden',!t)),metaTheme&&metaTheme.setAttribute('content',t?'#0b1220':'#14b8a6'),refreshVanta()}function loadThemePref(){try{return JSON.parse(localStorage.getItem('themePref')||'{}')}catch(e){return{}}}function saveThemePref(e){try{localStorage.setItem('themePref',JSON.stringify(e))}catch(e){}}let themePref=loadThemePref();themePref.mode||(themePref={mode:'auto',theme:timeBasedTheme()},saveThemePref(themePref)),setTheme(themePref.theme),themeBtn?.addEventListener('click',e=>{if(e.shiftKey)return themePref.mode='auto',themePref.theme=timeBasedTheme(),setTheme(themePref.theme),void saveThemePref(themePref);themePref.mode='manual',themePref.theme='dark'===themePref.theme?'light':'dark',setTheme(themePref.theme),saveThemePref(themePref)}),setInterval(()=>{if('auto'===themePref.mode){const e=timeBasedTheme();e!==themePref.theme&&(themePref.theme=e,setTheme(e),saveThemePref(themePref))}},9e5),rtlBtn?.addEventListener('click',()=>{document.documentElement.dir='rtl'===document.documentElement.dir?'ltr':'rtl'}),menuBtn?.addEventListener('click',()=>mobileNav.classList.toggle('hidden'));const onScroll=()=>navbar.classList.toggle('nav-opaque',window.scrollY>8);onScroll(),window.addEventListener('scroll',onScroll,{passive:!0});const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;!reduceMotion&&window.matchMedia('(pointer:fine)').matches&&spotlight&&window.addEventListener('pointermove',e=>{const t=document.body.getBoundingClientRect();spotlight.style.setProperty('--mx',100*((e.clientX-t.left)/t.width)+'%'),spotlight.style.setProperty('--my',100*((e.clientY-t.top)/t.height)+'%')});initI18n();let vantaEffect=null;function destroyVanta(){try{vantaEffect&&vantaEffect.destroy&&vantaEffect.destroy()}catch(e){}vantaEffect=null}function initVanta(){const e=window.matchMedia('(prefers-reduced-motion: reduce)').matches;if(e||!window.VANTA||!heroBgEl)return;const t=window.matchMedia('(pointer:coarse)').matches;try{vantaEffect=window.VANTA.NET({el:heroBgEl,mouseControls:!t,touchControls:t,gyroControls:!1,color:0x14b8a6,backgroundColor:root.classList.contains('dark')?0x0b1220:0xffffff,points:t?6:8,maxDistance:t?14:18,spacing:t?20:16,showDots:!1,scale:1,scaleMobile:1})}catch(e){console.warn('Vanta init error',e)}}function refreshVanta(){destroyVanta(),initVanta()}window.addEventListener('load',()=>{refreshVanta();try{if(!reduceMotion&&window.matchMedia('(pointer:fine)').matches&&window.VanillaTilt)window.VanillaTilt.init(document.querySelectorAll('[data-tilt]'),{speed:400,scale:1.02,max:8});else!reduceMotion&&window.matchMedia('(pointer:coarse)').matches&&document.querySelectorAll('.project-card').forEach(e=>{e.addEventListener('touchstart',()=>e.classList.add('active-press'),{passive:!0}),['touchend','touchcancel'].forEach(t=>e.addEventListener(t,()=>e.classList.remove('active-press')))})}catch(e){console.warn('Tilt init error',e)}});const dock=document.getElementById('dock'),dockNav=document.getElementById('dockNav'),dockBtn=document.getElementById('dockProjects');function revealProjects(){document.querySelectorAll('#projects .project-card').forEach((e,t)=>setTimeout(()=>e.classList.add('visible'),120*t))}dockBtn?.addEventListener('click',()=>{const e=document.getElementById('projects');dock.classList.add('pointer-events-none'),dockNav.classList.add('puff-out'),e&&e.scrollIntoView({behavior:'smooth',block:'start'}),revealProjects()}),dockNav?.addEventListener('animationend',()=>{dock.style.display='none'});const projSec=document.getElementById('projects');if('IntersectionObserver'in window&&projSec){const e=new IntersectionObserver(e=>{e.forEach(e=>{e.isIntersecting&&(revealProjects(),t.disconnect())})},{threshold:.2});var t=e;e.observe(projSec)}else setTimeout(revealProjects,600);(function(){[['refreshVanta exists','function'==typeof refreshVanta],['applyI18n available','function'==typeof applyI18n],['Dock button present',!!dockBtn],['Theme meta updates',!!metaTheme]].forEach(([e,t])=>console[t?'info':'warn']('TEST:',e,t?'OK':'FAIL'))})();
+      // RTL
+      rtlBtn?.addEventListener('click', ()=>{ document.documentElement.dir = document.documentElement.dir === 'rtl' ? 'ltr' : 'rtl'; });
 
-</script>
+      // Mobile nav
+      menuBtn?.addEventListener('click', ()=> mobileNav.classList.toggle('hidden'));
+      // Close mobile menu when clicking a link
+      mobileNav?.querySelectorAll('a').forEach(a=> a.addEventListener('click', ()=> mobileNav.classList.add('hidden')));
 
-    <div id="dock" class="fixed bottom-5 left-1/2 -translate-x-1/2 z-50">
-      <nav id="dockNav" aria-label="Quick menu" class="flex items-center gap-2 rounded-full border border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/60 backdrop-blur px-3 py-2 shadow-lg elev-2">
-        <button id="dockProjects" class="dock-btn inline-flex items-center gap-2 bg-brand-500/90 hover:bg-brand-600 text-white px-4 py-2 rounded-full">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="w-4 h-4"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
-          <span data-i18n="dock.projects">Projects</span>
-        </button>
-      </nav>
-    </div>
-  </body>
+      // Navbar opacity on scroll
+      const onScroll = ()=> navbar.classList.toggle('nav-opaque', window.scrollY > 8);
+      onScroll(); window.addEventListener('scroll', onScroll, { passive: true });
+
+      // Spotlight follow
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!reduceMotion && window.matchMedia('(pointer:fine)').matches && spotlight){
+        window.addEventListener('pointermove', (e)=>{
+          const rect = document.body.getBoundingClientRect();
+          spotlight.style.setProperty('--mx', ((e.clientX-rect.left)/rect.width*100)+'%');
+          spotlight.style.setProperty('--my', ((e.clientY-rect.top)/rect.height*100)+'%');
+        });
+      }
+
+      // I18N
+      const dict = {
+        en: {
+          'a11y.skip':'Skip to content','nav.skills':'Skills','nav.services':'Services','nav.projects':'Projects','nav.process':'Process','nav.contact':'Contact',
+          'hero.title':'Full‑Stack Web Developer<span class="text-brand-500">.</span>',
+          'hero.lead':'I build clean, responsive and secure web applications. Front‑end & back‑end: JavaScript/Node.js, Python, Go, C#, HTML/CSS. Availability aligned to EU hours (based in Argentina).',
+          'hero.b1':'• 4 years of close mentorship living with senior remote developers.',
+          'hero.b2':'• Specialty: AI‑assisted workflows & AI chatbot integration.',
+          'hero.b3':'• Serious delivery mindset — production‑ready, documented, tested.',
+          'cta.work':'Explore Work','cta.contact':'Contact','dock.projects':'Projects',
+          'avail.title':'Availability','avail.subtitle':'Overlap CET/CEST • Remote‑ready','avail.langsL':'Languages','avail.langsV':'English, Spanish','avail.tzL':'Timezone','avail.tzV':'AR (works EU hours)','avail.collabL':'Collab','avail.collabV':'Git, GitHub, Jira','avail.focusL':'Focus','avail.focusV':'Quality & detail',
+          'skills.h':'Skills','skills.lead':'Roadmap‑driven skillset, focused on job‑ready delivery.','skills.fe.h':'Front‑end','skills.fe.l1':'HTML, CSS (Tailwind), DevTools','skills.fe.l2':'JavaScript, DOM, Accessibility','skills.fe.l3':'Responsive design, SSR (Next.js)','skills.fe.l4':'React, TypeScript','skills.be.h':'Back‑end','skills.be.l1':'Node.js + Express','skills.be.l2':'Python, Go, C#','skills.be.l3':'REST APIs, WebSockets','skills.be.l4':'Auth (JWT/OAuth)','skills.di.h':'Data & Infra','skills.di.l1':'PostgreSQL, MongoDB','skills.di.l2':'Docker • AWS/GCP basics','skills.di.l3':'Git, GitHub, CI basics','skills.di.l4':'HTTP(S), DNS, CORS',
+          'services.h':'Services & Deliverables','services.lead':'Production‑ready work with documentation, testing and deploy.','projects.h':'Projects','projects.lead':'Selection of builds aligned with real client needs.',
+          'projects.p1.stack':'HTML • Tailwind • RTL','projects.p1.h':'Mario — Expenses Dashboard (Static)','projects.p1.p':'Pixel‑perfect from PDF, responsive + RTL (Hebrew). Single‑file delivery for pilot evaluation.','projects.tag.responsive':'Responsive','projects.tag.accessibility':'Accessibility','projects.p2.stack':'React • Node.js • PostgreSQL','projects.p2.h':'Client ↔ Worker Marketplace','projects.p2.p':'Job posting, secure messaging (JWT + WebSocket), profiles & ratings, advanced filters. Ready to scale.','projects.p3.stack':'Node.js • Strapi','projects.p3.h':'CMS Site Update & Clone','projects.p3.p':'Cloned/adapted an existing site. Clean components, content types and responsive UI.',
+          'process.h':'Process','process.s1.h':'1. Brief','process.s1.p':'Goals, scope, constraints. Risks & assumptions documented.','process.s2.h':'2. Build','process.s2.p':'MVP first. Clean code, commits, small PRs.','process.s3.h':'3. QA','process.s3.p':'Responsive, a11y, basic tests, security checks.','process.s4.h':'4. Ship','process.s4.p':'Deploy + README + handoff. Iterate if needed.',
+          'contact.h':'Contact','contact.lead':'Prefer contact via Upwork for project safety and scope control.','contact.links':'Links','contact.live':'Live Portfolio','contact.emailL':'Email','contact.form.nameL':'Name','contact.form.namePH':'Your name','contact.form.emailL':'Email','contact.form.emailPH':'you@example.com','contact.form.msgL':'Message','contact.form.msgPH':'Tell me about your project...','contact.form.send':'Send (demo)',
+          'footer.rights':'All rights reserved.','footer.back':'Back to top ↑'
+        },
+        es: {
+          'a11y.skip':'Saltar al contenido','nav.skills':'Habilidades','nav.services':'Servicios','nav.projects':'Proyectos','nav.process':'Proceso','nav.contact':'Contacto',
+          'hero.title':'Desarrollador Web Full‑Stack<span class="text-brand-500">.</span>',
+          'hero.lead':'Desarrollo aplicaciones web limpias, responsivas y seguras. Front‑end & back‑end: JavaScript/Node.js, Python, Go, C#, HTML/CSS. Disponibilidad alineada al horario de la UE (radicado en Argentina).',
+          'hero.b1':'• 4 años de mentoría cercana conviviendo con desarrolladores senior remotos.',
+          'hero.b2':'• Especialidad: flujos asistidos por IA e integración de chatbots.',
+          'hero.b3':'• Enfoque serio en entregables: listo para producción, documentado y testeado.',
+          'cta.work':'Ver trabajos','cta.contact':'Contacto','dock.projects':'Proyectos',
+          'avail.title':'Disponibilidad','avail.subtitle':'Traslape CET/CEST • Listo para remoto','avail.langsL':'Idiomas','avail.langsV':'Inglés, Español','avail.tzL':'Zona horaria','avail.tzV':'AR (trabaja horario UE)','avail.collabL':'Colaboración','avail.collabV':'Git, GitHub, Jira','avail.focusL':'Foco','avail.focusV':'Calidad y detalle',
+          'skills.h':'Habilidades','skills.lead':'Conjunto de habilidades guiado por roadmap, orientado a entregables.','skills.fe.h':'Front‑end','skills.fe.l1':'HTML, CSS (Tailwind), DevTools','skills.fe.l2':'JavaScript, DOM, Accesibilidad','skills.fe.l3':'Diseño responsivo, SSR (Next.js)','skills.fe.l4':'React, TypeScript','skills.be.h':'Back‑end','skills.be.l1':'Node.js + Express','skills.be.l2':'Python, Go, C#','skills.be.l3':'REST APIs, WebSockets','skills.be.l4':'Auth (JWT/OAuth)','skills.di.h':'Datos e Infra','skills.di.l1':'PostgreSQL, MongoDB','skills.di.l2':'Docker • AWS/GCP (básico)','skills.di.l3':'Git, GitHub, CI (básico)','skills.di.l4':'HTTP(S), DNS, CORS',
+          'services.h':'Servicios y Entregables','services.lead':'Trabajo listo para producción con documentación, testing y deploy.','projects.h':'Proyectos','projects.lead':'Selección alineada a necesidades reales de clientes.',
+          'projects.p1.stack':'HTML • Tailwind • RTL','projects.p1.h':'Mario — Panel de Gastos (Estático)','projects.p1.p':'Pixel‑perfect desde PDF, responsive + RTL (hebreo). Entrega single‑file para piloto.','projects.tag.responsive':'Responsivo','projects.tag.accessibilidad':'Accesibilidad','projects.p2.stack':'React • Node.js • PostgreSQL','projects.p2.h':'Marketplace de Clientes ↔ Trabajadores','projects.p2.p':'Publicación de trabajos, mensajería segura (JWT + WebSocket), perfiles y ratings, filtros avanzados. Listo para escalar.','projects.p3.stack':'Node.js • Strapi','projects.p3.h':'Actualización & Clonado de Sitio CMS','projects.p3.p':'Clonado/adaptación de sitio existente. Componentes limpios, tipos de contenido y UI responsiva.',
+          'process.h':'Proceso','process.s1.h':'1. Brief','process.s1.p':'Objetivos, alcance, restricciones. Riesgos y supuestos documentados.','process.s2.h':'2. Build','process.s2.p':'MVP primero. Código limpio, commits y PRs pequeñas.','process.s3.h':'3. QA','process.s3.p':'Responsive, a11y, tests básicos y chequeos de seguridad.','process.s4.h':'4. Ship','process.s4.p':'Deploy + README + handoff. Iteraciones si hace falta.',
+          'contact.h':'Contacto','contact.lead':'Prefiero contacto por Upwork para seguridad y control de alcance.','contact.links':'Enlaces','contact.live':'Portfolio en vivo','contact.emailL':'Email','contact.form.nameL':'Nombre','contact.form.namePH':'Tu nombre','contact.form.emailL':'Email','contact.form.emailPH':'tu@ejemplo.com','contact.form.msgL':'Mensaje','contact.form.msgPH':'Contame sobre tu proyecto...','contact.form.send':'Enviar (demo)',
+          'footer.rights':'Todos los derechos reservados.','footer.back':'Volver arriba ↑'
+        }
+      };
+      function applyI18n(lang){
+        document.documentElement.lang = lang;
+        document.querySelectorAll('[data-i18n]').forEach(el=>{
+          const key = el.getAttribute('data-i18n');
+          const str = (dict[lang] && dict[lang][key]) || el.textContent;
+          if (str && /<[^>]+>/.test(str)) el.innerHTML = str; else el.textContent = str;
+        });
+        const ph = { '#name':'contact.form.namePH', '#email':'contact.form.emailPH', '#message':'contact.form.msgPH' };
+        Object.entries(ph).forEach(([sel,key])=>{ const el = document.querySelector(sel); if (el && dict[lang][key]) el.setAttribute('placeholder', dict[lang][key]); });
+        localStorage.setItem('lang', lang);
+        if (langBtn) langBtn.textContent = lang.toUpperCase();
+      }
+      let lang = localStorage.getItem('lang') || 'en';
+      applyI18n(lang);
+      langBtn?.addEventListener('click', ()=>{ lang = (lang==='en')?'es':'en'; applyI18n(lang); });
+
+      // VANTA helpers (clean try/catch)
+      let vantaEffect = null;
+      function destroyVanta(){ try { vantaEffect && vantaEffect.destroy && vantaEffect.destroy(); } catch(e){} vantaEffect = null; }
+      function initVanta(){
+        const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (reduce || !window.VANTA || !heroBgEl) return;
+        const coarse = window.matchMedia('(pointer:coarse)').matches;
+        try {
+          vantaEffect = window.VANTA.NET({
+            el: heroBgEl,
+            mouseControls: !coarse,
+            touchControls: coarse,
+            gyroControls: false,
+            color: 0x14b8a6,
+            backgroundColor: root.classList.contains('dark') ? 0x0b1220 : 0xffffff,
+            points: coarse ? 6.0 : 8.0,
+            maxDistance: coarse ? 14.0 : 18.0,
+            spacing: coarse ? 20.0 : 16.0,
+            showDots: false,
+            scale: 1.0, scaleMobile: 1.0
+          });
+        } catch(e){ console.warn('Vanta init error', e); }
+      }
+      function refreshVanta(){ destroyVanta(); initVanta(); }
+
+      // Init interactive bits on load
+      window.addEventListener('load', ()=>{
+        refreshVanta();
+        const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        try {
+          if (!reduce && window.matchMedia('(pointer:fine)').matches && window.VanillaTilt) {
+            window.VanillaTilt.init(document.querySelectorAll('[data-tilt]'), { speed: 400, scale: 1.02, max: 8 });
+          } else if (!reduce && window.matchMedia('(pointer:coarse)').matches) {
+            document.querySelectorAll('.project-card').forEach(card=>{
+              card.addEventListener('touchstart', ()=> card.classList.add('active-press'), { passive:true });
+              ['touchend','touchcancel'].forEach(ev=> card.addEventListener(ev, ()=> card.classList.remove('active-press')));
+            });
+          }
+        } catch(e){ console.warn('Tilt init error', e); }
+      });
+
+      // ===== Floating Dock (Projects) =====
+      const dock = document.getElementById('dock');
+      const dockNav = document.getElementById('dockNav');
+      const dockBtn = document.getElementById('dockProjects');
+      function revealProjects(){ document.querySelectorAll('#projects .project-card').forEach((card, i)=> setTimeout(()=> card.classList.add('visible'), i*120)); }
+      dockBtn?.addEventListener('click', ()=>{
+        const sec = document.getElementById('projects');
+        if (!dock || !dockNav) return;
+        dock.classList.add('pointer-events-none');
+        dockNav.classList.add('puff-out');
+        if (sec) sec.scrollIntoView({ behavior:'smooth', block:'start' });
+        revealProjects();
+      });
+      dockNav?.addEventListener('animationend', ()=>{ if (dock) dock.style.display='none'; });
+      const projSec = document.getElementById('projects');
+      if ('IntersectionObserver' in window && projSec){
+        const io = new IntersectionObserver((entries)=>{ entries.forEach(e=>{ if (e.isIntersecting){ revealProjects(); io.disconnect(); } }); }, { threshold:.2 });
+        io.observe(projSec);
+      } else { setTimeout(revealProjects, 600); }
+
+      // Smoketests
+      (function(){
+        const tests = [
+          ['Dock present', !!dock && !!dockBtn && !!dockNav],
+          ['Mobile menu binds', !!menuBtn && !!mobileNav],
+          ['Vanta refresh exists', typeof refreshVanta === 'function']
+        ];
+        tests.forEach(([name, ok])=> console[ok?'info':'warn']('TEST:', name, ok?'OK':'FAIL'));
+      })();
+    })();
+    </script>
+<!-- [ANCHOR:BODY_END] --><script defer="True" src="./assets/main_check.js"></script></body>
 </html>
