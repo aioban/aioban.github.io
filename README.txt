@@ -1,1 +1,1 @@
-Upload index.html to the root of your aioban.github.io repository and commit. Then open https://aioban.github.io/
+Upload index.html 
