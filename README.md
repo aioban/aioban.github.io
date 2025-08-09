@@ -55,10 +55,3 @@ index.html   # all markup, styles (Tailwind CDN config) and minimal JS
 - GitHub: **https://github.com/aioban**
 - Live: **https://aioban.github.io/**
 
----
-
-### EN Summary
-Single-file portfolio website (HTML + Tailwind CDN). Dark mode, RTL toggle, responsive layout, OG/JSON-LD SEO, and accessible patterns. Deploy by uploading `index.html` to the root of the `aioban.github.io` repository.
-
-### License
-MIT (optional). Add a `LICENSE` file if you want to allow reuse under MIT terms.
