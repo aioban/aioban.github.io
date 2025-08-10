@@ -1,0 +1,10 @@
+{
+  "name": "aioban-site",
+  "private": true,
+  "scripts": {
+    "build:css": "npx tailwindcss -i assets/input.css -o assets/app.css --minify"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.10"
+  }
+}
