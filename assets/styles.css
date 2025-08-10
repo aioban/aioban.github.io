@@ -1,0 +1,29 @@
+
+:root { color-scheme: light dark; }
+html.scroll-smooth { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce){ html.scroll-smooth { scroll-behavior: auto; } }
+
+.container { max-width: 1120px; }
+
+/* Dock */
+.dock { position: fixed; inset-inline: 0; bottom: 16px; display: flex; justify-content: center; pointer-events: none; }
+.dock-nav { pointer-events: all; backdrop-filter: blur(8px);
+  background: color-mix(in srgb, Canvas 80%, CanvasText 8%);
+  border: 1px solid color-mix(in srgb, currentColor 15%, transparent);
+  box-shadow: 0 8px 28px rgba(0,0,0,.15); }
+.dock-btn{ padding:.7rem 1rem; border-radius:9999px; }
+@media (pointer:coarse){ .dock-btn{ padding:.85rem 1.1rem; font-size:.95rem; } }
+
+/* Project links disabled */
+#projects a[aria-disabled="true"]{ cursor:not-allowed; filter:saturate(.6); }
+
+/* Spotlight */
+#spotlight{
+  --mx: 50%;
+  --my: 30%;
+  pointer-events:none;
+  position:fixed; inset:0;
+  background: radial-gradient(600px 350px at var(--mx) var(--my),
+    color-mix(in srgb, #60a5fa 22%, transparent) 0%,
+    transparent 60%);
+}
