@@ -1,0 +1,17 @@
+name: Build Tailwind CSS
+on:
+  push:
+    branches: [ "main" ]
+jobs:
+  build-css:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      - run: npm ci || npm i
+      - run: npx tailwindcss -i assets/input.css -o assets/app.css --minify
+      - uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: build Tailwind CSS -> assets/app.css"
+          file_pattern: "assets/app.css"
