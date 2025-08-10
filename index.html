@@ -3,8 +3,7 @@
 <html class="scroll-smooth" data-theme="dark" lang="en">
 <head><!-- [ANCHOR:HEAD_START] -->
 <meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/><meta content="default-src 'self'; script-src 'self' https://cdn.tailwindcss.com; style-src 'self';
- img-src 'self' data: https:; connect-src 'self' https:; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; upgrade-insecure-requests" http-equiv="Content-Security-Policy"/>
+<meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/><meta content="default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net sha256-5r7QPTehGQNTIR3L+2y9tmzOXE87w/kgl+vsc3PE8A8=; style-src 'self'; img-src 'self' data: https:; connect-src 'self' https:; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; upgrade-insecure-requests" http-equiv="Content-Security-Policy"/>
 <title>Aioban.Dev Group — Full-Stack Web Developer</title>
 <meta content="Full-stack web developer. React/Next.js, Node.js, Python, Go, C#, PostgreSQL/MongoDB. Responsive, secure, and production-ready web apps." name="description"/>
 <meta content="#14b8a6" name="theme-color"/>
@@ -24,69 +23,13 @@
     }
     </script>
 <!-- Tailwind CSS CDN -->
-<link rel="stylesheet" href="./assets/app.css">
- <link rel="stylesheet" href="./assets/styles.css">
+<link href="./assets/app.css" rel="stylesheet"/>
+<link href="./assets/styles.css" rel="stylesheet"/>
 
 
-<script>
-      tailwind.config = {
-        darkMode: 'class',
-        theme: {
-          extend: {
-            colors: {
-              brand: { 50:'#f0fdfa',100:'#ccfbf1',200:'#99f6e4',300:'#5eead4',400:'#2dd4bf',500:'#14b8a6',600:'#0d9488',700:'#0f766e',800:'#115e59',900:'#134e4a' },
-              accent: { 50:'#fff1f2', 400:'#fca5a5' }
-            },
-            boxShadow: { soft: '0 6px 24px -6px rgb(0 0 0 / 0.15)' }
-          }
-        }
-      }
-    </script>
-<style>
-      /* Elevation */
-      .elev-1 { box-shadow: 0 1px 2px rgba(0,0,0,.06), 0 3px 12px rgba(0,0,0,.08), 0 12px 24px -12px rgba(0,0,0,.12); }
-      .elev-2 { box-shadow: 0 2px 4px rgba(0,0,0,.06), 0 8px 24px rgba(0,0,0,.10), 0 24px 48px -24px rgba(0,0,0,.16); }
-
-      /* Glass navbar */
-      .nav-glass { background: rgba(255,255,255,.55); -webkit-backdrop-filter: saturate(140%) blur(8px); backdrop-filter: saturate(140%) blur(8px); }
-      .dark .nav-glass { background: rgba(2,6,23,.45); }
-      .nav-opaque { background: rgba(255,255,255,.85); }
-      .dark .nav-opaque { background: rgba(2,6,23,.70); }
-
-      /* Spotlight */
-      .spotlight { pointer-events:none; position:absolute; inset:0; mix-blend-mode:soft-light; background: radial-gradient(600px circle at var(--mx,50%) var(--my,50%), rgba(20,184,166,.18), transparent 55%); transition: opacity .3s ease; }
-      @media (prefers-reduced-motion: reduce) { .spotlight { display:none; } }
-
-      /* Tilt hint */
-      [data-tilt] { will-change: transform; transform: translateZ(0); }
-
-      /* Fade-in */
-      .fade-in{animation:fade 420ms ease both}
-      @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
-
-      /* A11y focus skip */
-      .sr-only:focus,.skip:focus{position:static!important;clip:auto!important;height:auto;width:auto;background:#fff;color:#000;padding:.5rem 1rem;border-radius:.75rem}
-
-      /* Project cards reveal */
-      .project-card{opacity:0;transform:translateY(16px) scale(.98);transition:opacity .5s ease,transform .5s ease,box-shadow .2s ease}
-      .project-card.visible{opacity:1;transform:none}
-      @media (prefers-reduced-motion: reduce){.project-card{transition:none}}
-
-      /* Puff cloud vanish for floating button */
-      .puff-out{animation:puff .6s ease forwards;will-change:transform,filter,opacity}
-      @keyframes puff{0%{opacity:1;filter:blur(0);transform:translateY(0) scale(1)}100%{opacity:0;filter:blur(12px);transform:translateY(10px) scale(1.1)}}
-
-      /* Mobile-first polish */
-      :root { --safe-bottom: env(safe-area-inset-bottom); }
-      #dock { padding-bottom: max(0px, var(--safe-bottom)); }
-      a, button { -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
-      .active-press { transform: scale(.98); }
-      .dock-btn{ padding:.7rem 1rem; border-radius:9999px; }
-      @media (pointer:coarse){ .dock-btn{ padding:.85rem 1.1rem; font-size:.95rem; } }
-    </style>
 <!-- Icons, Open Graph & Twitter -->
-<link href="https://aioban.github.io/" rel="canonical"/>
-<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="https://aioban.github.io/" rel="canonical">
+<link href="/favicon.svg" rel="icon" type="image/svg+xml">
 <link href="/favicon-32.png" rel="icon" sizes="32x32" type="image/png"/>
 <link href="/favicon-512.png" rel="icon" sizes="512x512" type="image/png"/>
 <link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
@@ -94,7 +37,7 @@
 <meta content="1200" property="og:image:width"/>
 <meta content="630" property="og:image:height"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<!-- [ANCHOR:HEAD_END] --><link crossorigin="True" href="https://cdnjs.cloudflare.com" rel="preconnect"/><link crossorigin="True" href="https://cdn.jsdelivr.net" rel="preconnect"/><style>@media (prefers-reduced-motion: reduce){ html.scroll-smooth { scroll-behavior: auto; } }</style><link crossorigin="True" href="https://cdn.tailwindcss.com" rel="preconnect"/></head>
+<!-- [ANCHOR:HEAD_END] --><link crossorigin="True" href="https://cdnjs.cloudflare.com" rel="preconnect"/><link crossorigin="True" href="https://cdn.jsdelivr.net" rel="preconnect"/></link></link></head>
 <body class="bg-white text-slate-800 antialiased dark:bg-slate-950 dark:text-slate-100" id="top"><!-- [ANCHOR:BODY_START] -->
 <a class="skip sr-only focus:not-sr-only absolute left-4 top-4 z-50" data-i18n="a11y.skip" href="#main">Skip to content</a>
 <header class="sticky top-0 z-40 border-b border-slate-200/70 dark:border-slate-800 nav-glass" id="navbar">
@@ -291,7 +234,7 @@
 <div class="mt-6 text-sm text-slate-500" data-i18n="contact.emailL">Email</div>
 <a class="font-medium hover:underline" href="mailto:compagnucci.ja@gmail.com" id="emailLink">compagnucci.ja@gmail.com</a>
 </div>
-<form aria-label="Contact form (non-functional demo)" class="rounded-2xl border border-slate-200 dark:border-slate-800 p-6 elev-1 bg-white/90 dark:bg-slate-950/60" onsubmit="event.preventDefault()">
+<form aria-label="Contact form (non-functional demo)" class="rounded-2xl border border-slate-200 dark:border-slate-800 p-6 elev-1 bg-white/90 dark:bg-slate-950/60" id="contactForm">
 <div class="grid gap-4">
 <div>
 <label class="block text-sm text-slate-500" data-i18n="contact.form.nameL" for="name">Name</label>
@@ -522,7 +465,6 @@
       })();
     })();
     </script>
- <script defer src="./assets/main_check.js"></script>
-
-<!-- [ANCHOR:BODY_END] --><script defer="True" src="./assets/main_check.js"></script></body>
+<script defer="" src="./assets/main_check.js"></script>
+<!-- [ANCHOR:BODY_END] --><script defer="True" src="./assets/app.js"></script></body>
 </html>
