@@ -3,28 +3,21 @@ on:
   push:
     branches: [ "main" ]
 
-permissions:
-  contents: write  # ← permite commitear assets/app.css
-
 jobs:
   build-css:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
+
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
-          cache: 'npm'
-      - name: Instalar dependencias (si hay)
-        run: npm ci || npm i
-      - name: Build CSS (con fallback)
-        run: |
-          npx tailwindcss -v || true
-          npx --yes tailwindcss@3.4.10 -i assets/input.css -o assets/app.css --minify
-      - name: Commit built CSS
-        uses: stefanzweifel/git-auto-commit-action@v5
+          node-version: 20   # sin cache, sin lockfile
+
+      - name: Build CSS con npx (sin instalar deps)
+        run: npx --yes tailwindcss@3.4.10 -i assets/input.css -o assets/app.css --minify
+
+      - name: Subir artefacto (app.css)
+        uses: actions/upload-artifact@v4
         with:
-          commit_message: "chore: build Tailwind CSS -> assets/app.css"
-          file_pattern: "assets/app.css"
+          name: app.css
+          path: assets/app.css
